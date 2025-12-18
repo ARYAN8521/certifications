@@ -4,25 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aryan Kumar Sahu - Certifications</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
-
     <style>
         :root {
-            --primary-bg: #050816;
-            --primary-gradient: radial-gradient(circle at 0% 0%, #1b4dff33 0, transparent 55%),
-                               radial-gradient(circle at 100% 100%, #64ffda22 0, transparent 55%),
-                               #050816;
-            --card-glass: rgba(17, 34, 64, 0.75);
+            --primary-bg: #0a192f;
+            --card-bg: #112240;
             --accent-cyan: #64ffda;
-            --accent-purple: #7c3aed;
-            --text-primary: #e2e8f0;
-            --text-secondary: #94a3b8;
-            --border-color: rgba(148, 163, 184, 0.45);
-            --shadow-soft: 0 22px 45px rgba(15, 23, 42, 0.85);
-            --radius-xl: 18px;
-            --transition-fast: 0.25s ease;
+            --text-primary: #ccd6f6;
+            --text-secondary: #8892b0;
+            --border-color: rgba(100, 255, 218, 0.1);
         }
 
         * {
@@ -32,291 +21,177 @@
         }
 
         body {
-            min-height: 100vh;
-            font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--primary-gradient);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--primary-bg);
             color: var(--text-primary);
-            padding: 40px 18px 60px;
-            line-height: 1.7;
-            overflow-x: hidden;
+            padding: 40px 20px;
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 1180px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 38px;
-            position: relative;
-        }
-
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.8rem;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: var(--accent-cyan);
-            padding: 6px 14px;
-            border-radius: 999px;
-            border: 1px solid rgba(100, 255, 218, 0.25);
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.4));
-            margin-bottom: 14px;
-        }
-
-        .section-label-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--accent-cyan);
-            box-shadow: 0 0 12px rgba(100, 255, 218, 0.95);
+            margin-bottom: 40px;
         }
 
         .section-header h1 {
-            font-family: 'Space Grotesk', system-ui, sans-serif;
-            font-size: clamp(2.2rem, 3.1vw, 2.7rem);
-            color: #f9fafb;
+            font-size: 2.5rem;
+            color: var(--accent-cyan);
             margin-bottom: 10px;
-            letter-spacing: 0.03em;
-        }
-
-        .section-header span.highlight {
-            background: linear-gradient(120deg, var(--accent-cyan), #38bdf8, var(--accent-purple));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            font-weight: 700;
         }
 
         .section-header p {
             color: var(--text-secondary);
-            font-size: 0.98rem;
-            max-width: 620px;
+            font-size: 1.05rem;
+            max-width: 650px;
             margin: 0 auto;
         }
 
         .cards-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 26px;
-            margin-top: 26px;
+            gap: 30px;
+            margin-top: 30px;
         }
 
         .cert-card {
-            position: relative;
-            background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), var(--card-glass));
-            border-radius: var(--radius-xl);
-            padding: 22px 20px 20px;
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-soft);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            position: relative;
             overflow: hidden;
-            transition:
-                transform var(--transition-fast),
-                box-shadow var(--transition-fast),
-                border-color var(--transition-fast),
-                background var(--transition-fast);
         }
 
         .cert-card::before {
             content: '';
             position: absolute;
-            inset: -40%;
-            background: conic-gradient(from 180deg, transparent, rgba(100, 255, 218, 0.22), transparent 30%);
-            opacity: 0;
-            transform: rotate(0deg);
-            transition: opacity 0.45s ease, transform 0.8s ease;
-        }
-
-        .cert-card:hover {
-            transform: translateY(-8px) translateZ(0);
-            box-shadow: 0 26px 55px rgba(15, 23, 42, 0.95);
-            border-color: rgba(100, 255, 218, 0.7);
-            background: linear-gradient(155deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.85));
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-cyan), #64d4ff);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
         }
 
         .cert-card:hover::before {
-            opacity: 1;
-            transform: rotate(12deg);
+            transform: scaleX(1);
         }
 
-        .card-top-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 14px;
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
         }
 
         .card-icon {
-            width: 54px;
-            height: 54px;
+            width: 56px;
+            height: 56px;
+            margin-bottom: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 18px;
-            background: radial-gradient(circle at 0 0, rgba(100, 255, 218, 0.37), transparent 55%),
-                        radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.25), transparent 55%),
-                        rgba(15, 23, 42, 0.95);
-            border: 1px solid rgba(148, 163, 184, 0.5);
+            background: rgba(100, 255, 218, 0.1);
+            border-radius: 10px;
         }
 
         .card-icon svg {
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             fill: var(--accent-cyan);
         }
 
         .cert-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(15, 23, 42, 0.9);
+            display: inline-block;
+            background: rgba(100, 255, 218, 0.1);
             color: var(--accent-cyan);
-            padding: 4px 11px;
-            border-radius: 999px;
-            font-size: 0.76rem;
+            padding: 5px 13px;
+            border-radius: 20px;
+            font-size: 0.85rem;
             font-weight: 500;
-            border: 1px solid rgba(100, 255, 218, 0.4);
-            text-transform: uppercase;
-            letter-spacing: 0.11em;
-        }
-
-        .badge-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 999px;
-            background: var(--accent-cyan);
+            margin-bottom: 10px;
         }
 
         .cert-card h3 {
-            font-size: 1.08rem;
-            color: #e5e7eb;
-            margin-bottom: 4px;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 10px;
             font-weight: 600;
         }
 
         .issuer {
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             color: var(--text-secondary);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .cert-card p {
             color: var(--text-secondary);
-            margin-bottom: 12px;
-            font-size: 0.88rem;
-        }
-
-        .cert-preview-wrapper {
-            position: relative;
-            margin-bottom: 14px;
-            border-radius: 13px;
-            overflow: hidden;
+            margin-bottom: 15px;
+            font-size: 0.93rem;
         }
 
         .cert-preview {
             width: 100%;
             height: auto;
-            border-radius: 13px;
-            border: 1px solid rgba(148, 163, 184, 0.6);
-            transition: transform 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
-            display: block;
+            border-radius: 8px;
+            margin: 10px 0 15px 0;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
-        .cert-card:hover .cert-preview {
-            transform: scale(1.015);
-            border-color: rgba(100, 255, 218, 0.8);
-            filter: saturate(1.12);
-        }
-
-        .glass-tag {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            font-size: 0.72rem;
-            padding: 4px 9px;
-            border-radius: 999px;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.4));
-            border: 1px solid rgba(148, 163, 184, 0.7);
-            color: #e5e7eb;
-        }
-
-        .card-links-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-items: center;
+        .cert-preview:hover {
+            transform: scale(1.02);
+            border-color: var(--accent-cyan);
         }
 
         .card-link {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             color: var(--accent-cyan);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.84rem;
-            padding: 8px 14px;
-            border-radius: 999px;
-            border: 1px solid rgba(100, 255, 218, 0.75);
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.6));
-            transition:
-                background var(--transition-fast),
-                transform var(--transition-fast),
-                box-shadow var(--transition-fast);
-        }
-
-        .card-link svg {
-            width: 15px;
-            height: 15px;
-            fill: var(--accent-cyan);
+            padding: 10px 20px;
+            border: 1px solid var(--accent-cyan);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            margin-top: 5px;
         }
 
         .card-link:hover {
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(15, 23, 42, 0.95));
-            transform: translateY(-1px);
-            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.8);
+            background: rgba(100, 255, 218, 0.08);
+            transform: translateX(4px);
+        }
+
+        .card-link svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--accent-cyan);
         }
 
         .achievement-date {
-            margin-top: 10px;
-            padding-top: 9px;
-            border-top: 1px dashed rgba(148, 163, 184, 0.55);
-            font-size: 0.8rem;
-            color: rgba(148, 163, 184, 0.95);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .achievement-pill {
-            padding: 3px 9px;
-            border-radius: 999px;
-            border: 1px solid rgba(148, 163, 184, 0.5);
-            font-size: 0.75rem;
-            color: rgba(226, 232, 240, 0.9);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
         }
 
         @media (max-width: 768px) {
-            body {
-                padding: 28px 14px 44px;
-            }
-
             .section-header h1 {
-                font-size: 1.9rem;
+                font-size: 2rem;
             }
 
             .cards-container {
                 grid-template-columns: 1fr;
-            }
-
-            .cert-card {
-                padding: 20px 18px 18px;
             }
         }
     </style>
@@ -324,293 +199,172 @@
 <body>
 <div class="container">
     <div class="section-header">
-        <div class="section-label">
-            <span class="section-label-dot"></span>
-            CERTIFICATIONS
-        </div>
-        <h1>Professional <span class="highlight">Credentials</span></h1>
-        <p>All verified certifications of Aryan Kumar Sahu, showcasing a strong foundation in data analytics, programming, cloud technologies, and modern web development.</p>
+        <h1>Professional Certifications</h1>
+        <p>All verified certifications of Aryan Kumar Sahu, showcasing skills in data analytics, programming, cloud, and web development.</p>
     </div>
 
     <div class="cards-container">
 
         <!-- Oracle Analytics Cloud -->
         <div class="cert-card" id="oracle-oac">
-            <div class="card-top-row">
-                <div class="card-icon">
-                    <!-- doc icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M14 2H6C4.9 2 4 2.9 4 4v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 15h8v2H8v-2zm0-4h8v2H8v-2zm0-4h5v2H8V7z"/>
-                    </svg>
-                </div>
-                <span class="cert-badge">
-                    <span class="badge-dot"></span>
-                    Cloud Analytics
-                </span>
+            <div class="card-icon">
+                <!-- doc icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M14 2H6C4.9 2 4 2.9 4 4v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 15h8v2H8v-2zm0-4h8v2H8v-2zm0-4h5v2H8V7z"/>
+                </svg>
             </div>
-
+            <span class="cert-badge">Cloud Analytics</span>
             <h3>Oracle Analytics Cloud 2025 Professional</h3>
             <div class="issuer">Oracle University · Exam 1Z0-1041-25</div>
-            <p>Certified in Oracle Analytics Cloud covering provisioning, data modeling, visualization, security, and advanced analytics on Oracle Cloud Infrastructure.</p>
-
-            <div class="cert-preview-wrapper">
-                <img src="certi.png" alt="Oracle Analytics Cloud Certificate" class="cert-preview">
-                <div class="glass-tag">Official Certificate</div>
-            </div>
-
-            <div class="card-links-row">
-                <a href="certi.pdf" class="card-link" target="_blank" rel="noopener">
-                    View Certificate
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                    </svg>
-                </a>
-                <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=3D589FE51242B08B34B6343A0FF42F49BCC9A146D647ACAB60C2C1938D3EDD54" class="card-link" target="_blank" rel="noopener">
-                    View Digital Badge
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                    </svg>
-                </a>
-            </div>
-
-            <div class="achievement-date">
-                <span>Issued: November 2025</span>
-                <span class="achievement-pill">Oracle Analytics Cloud</span>
-            </div>
+            <p>Certified professional in Oracle Analytics Cloud, covering provisioning, data modeling, visualization, security, and advanced analytics on OCI.</p>
+            <img src="certi.png" alt="Oracle Analytics Cloud Certificate" class="cert-preview">
+            <a href="certi.pdf" class="card-link" target="_blank" rel="noopener">
+                View Certificate
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </a>
+            <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=3D589FE51242B08B34B6343A0FF42F49BCC9A146D647ACAB60C2C1938D3EDD54" class="card-link" target="_blank" rel="noopener">
+                View Digital Badge
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </a>
+            <div class="achievement-date">Issued: November 2025</div>
         </div>
 
-        <!-- IBM Data Analyst with Python -->
+  <!-- IBM Data Analyst with Python -->
         <div class="cert-card" id="ibm-python">
-            <div class="card-top-row">
-                <div class="card-icon">
-                    <!-- database icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M12 2C7.58 2 4 3.79 4 6v12c0 2.21 3.58 4 8 4s8-1.79 8-4V6c0-2.21-3.58-4-8-4zm0 2c3.87 0 6 1.34 6 2s-2.13 2-6 2-6-1.34-6-2 2.13-2 6-2zm0 16c-3.87 0-6-1.34-6-2v-2.09C7.16 18.13 9.62 18.6 12 18.6s4.84-.47 6-1.69V18c0 .66-2.13 2-6 2zm0-5c-3.87 0-6-1.34-6-2v-2.09C7.16 13.13 9.62 13.6 12 13.6s4.84-.47 6-1.69V13c0 .66-2.13 2-6 2z"/>
-                    </svg>
-                </div>
-                <span class="cert-badge">
-                    <span class="badge-dot"></span>
-                    Data Analytics
-                </span>
+            <div class="card-icon">
+                <!-- database icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 2C7.58 2 4 3.79 4 6v12c0 2.21 3.58 4 8 4s8-1.79 8-4V6c0-2.21-3.58-4-8-4zm0 2c3.87 0 6 1.34 6 2s-2.13 2-6 2-6-1.34-6-2 2.13-2 6-2zm0 16c-3.87 0-6-1.34-6-2v-2.09C7.16 18.13 9.62 18.6 12 18.6s4.84-.47 6-1.69V18c0 .66-2.13 2-6 2zm0-5c-3.87 0-6-1.34-6-2v-2.09C7.16 13.13 9.62 13.6 12 13.6s4.84-.47 6-1.69V13c0 .66-2.13 2-6 2z"/>
+                </svg>
             </div>
-
-            <h3>IBM Data Analysis with Python</h3>
+            <span class="cert-badge">Data Analytics</span>
+            <h3>Data Analysis with Python</h3>
             <div class="issuer">IBM / Partner Institute</div>
-            <p>Training focused on Python-based data analysis including NumPy, pandas, visualization, and core machine learning workflows for real-world datasets.</p>
-
-            <div class="cert-preview-wrapper">
-                <img src="ibm-python-da.png" alt="IBM Data Analysis with Python Certificate" class="cert-preview">
-                <div class="glass-tag">IBM Credential</div>
-            </div>
-
-            <div class="card-links-row">
-                <a href="ibm-python-da.pdf" class="card-link" target="_blank" rel="noopener">
-                    View Certificate
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                    </svg>
-                </a>
-            </div>
-
-            <div class="achievement-date">
-                <span>Issued: 2024</span>
-                <span class="achievement-pill">Python · Analytics</span>
-            </div>
+            <p>Training in Python-based data analysis including NumPy, pandas, visualization, and basic machine learning workflows for real-world datasets.</p>
+            <img src="ibm-python-da.png" alt="IBM Data Analysis with Python Certificate" class="cert-preview">
+            <a href="ibm-python-da.pdf" class="card-link" target="_blank" rel="noopener">
+                View Certificate
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </a>
+            <div class="achievement-date">Issued: 2024</div>
         </div>
-
+        
+        
         <!-- Power BI -->
         <div class="cert-card" id="powerbi">
-            <div class="card-top-row">
-                <div class="card-icon">
-                    <!-- bar chart icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M5 9h3v10H5V9zm5-4h3v14h-3V5zm5 7h3v7h-3v-7zM4 19h16v2H4z"/>
-                    </svg>
-                </div>
-                <span class="cert-badge">
-                    <span class="badge-dot"></span>
-                    Business Intelligence
-                </span>
+            <div class="card-icon">
+                <!-- bar chart icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M5 9h3v10H5V9zm5-4h3v14h-3V5zm5 7h3v7h-3v-7zM4 19h16v2H4z"/>
+                </svg>
             </div>
-
+            <span class="cert-badge">Business Intelligence</span>
             <h3>AI Dashboards using Microsoft Power BI</h3>
             <div class="issuer">Skill Nation</div>
-            <p>Hands-on workshop on building interactive Power BI dashboards, connecting multiple data sources, and using AI visuals for forecasting and clustering.</p>
-
-            <div class="cert-preview-wrapper">
-                <img src="bi-certificate.png" alt="Power BI Certificate" class="cert-preview">
-                <div class="glass-tag">Workshop Certificate</div>
-            </div>
-
-            <div class="card-links-row">
-                <a href="bi-certificate.pdf" class="card-link" target="_blank" rel="noopener">
-                    View Certificate
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                    </svg>
-                </a>
-            </div>
-
-            <div class="achievement-date">
-                <span>Issued: July 2025</span>
-                <span class="achievement-pill">Power BI · AI</span>
-            </div>
+            <p>Hands-on workshop on building interactive Power BI dashboards, connecting multiple data sources, and applying AI visuals for forecasting and clustering.</p>
+            <img src="bi-certificate.png" alt="Power BI Certificate" class="cert-preview">
+            <!-- replace href with your real verification URL -->
+            <a href="bi-certificate.pdf" class="card-link" target="_blank" rel="noopener">
+                View Certificate
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </a>
+            <div class="achievement-date">Issued: July 2025</div>
         </div>
 
         <!-- Python -->
         <div class="cert-card" id="python">
-            <div class="card-top-row">
-                <div class="card-icon">
-                    <!-- code icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M8.7 17.3L3.4 12l5.3-5.3L9.8 7.8 5.6 12l4.2 4.2-1.1 1.1zm6.6 0l1.1-1.1 4.2-4.2-4.2-4.2-1.1-1.1L20.6 12l-5.3 5.3z"/>
-                    </svg>
-                </div>
-                <span class="cert-badge">
-                    <span class="badge-dot"></span>
-                    Programming
-                </span>
+            <div class="card-icon">
+                <!-- code icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M8.7 17.3L3.4 12l5.3-5.3L9.8 7.8 5.6 12l4.2 4.2-1.1 1.1zm6.6 0l1.1-1.1 4.2-4.2-4.2-4.2-1.1-1.1L20.6 12l-5.3 5.3z"/>
+                </svg>
             </div>
-
+            <span class="cert-badge">Programming</span>
             <h3>Python Programming</h3>
             <div class="issuer">Lifetech Software / Training Institute</div>
-            <p>Covers core Python programming, data structures, file handling, and beginner-level projects supporting data analytics and web development.</p>
-
-            <div class="cert-preview-wrapper">
-                <img src="python-certificate.png" alt="Python Certificate" class="cert-preview">
-                <div class="glass-tag">Training Program</div>
-            </div>
-
-            <div class="card-links-row">
-                <a href="python-certificate.pdf" class="card-link" target="_blank" rel="noopener">
-                    View Certificate
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                    </svg>
-                </a>
-            </div>
-
-            <div class="achievement-date">
-                <span>Issued: 2023</span>
-                <span class="achievement-pill">Python · Fundamentals</span>
-            </div>
+            <p>Training focused on core Python, data structures, file handling, and basic projects that support data analysis and web development workflows.</p>
+            <img src="python-certificate.png" alt="Python Certificate" class="cert-preview">
+            <a href="python-certificate.pdf" class="card-link" target="_blank" rel="noopener">
+                View Certificate
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </a>
+            <div class="achievement-date">Issued: 2023</div>
         </div>
 
         <!-- Data Analyst -->
         <div class="cert-card" id="data-analyst">
-            <div class="card-top-row">
-                <div class="card-icon">
-                    <!-- analytics icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M3 17h2v-7H3v7zm4 0h2V7H7v10zm4 0h2v-4h-2v4zm4 0h2V4h-2v13zm3 2H2v2h19v-2z"/>
-                    </svg>
-                </div>
-                <span class="cert-badge">
-                    <span class="badge-dot"></span>
-                    Data Analytics
-                </span>
+            <div class="card-icon">
+                <!-- analytics icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M3 17h2v-7H3v7zm4 0h2V7H7v10zm4 0h2v-4h-2v4zm4 0h2V4h-2v13zm3 2H2v2h19v-2z"/>
+                </svg>
             </div>
-
+            <span class="cert-badge">Data Analytics</span>
             <h3>Data Analyst Certification</h3>
             <div class="issuer">[Your Issuer Name]</div>
-            <p>Covers data cleaning, exploratory analysis, dashboarding, and communicating insights for real-world business decision-making.</p>
-
-            <div class="cert-preview-wrapper">
-                <img src="data-analyst-certificate.png" alt="Data Analyst Certificate" class="cert-preview">
-                <div class="glass-tag">Professional Course</div>
-            </div>
-
-            <div class="card-links-row">
-                <a href="data-analyst-certificate.pdf" class="card-link" target="_blank" rel="noopener">
-                    View Certificate
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                    </svg>
-                </a>
-            </div>
-
-            <div class="achievement-date">
-                <span>Issued: 2024</span>
-                <span class="achievement-pill">Analytics · Dashboards</span>
-            </div>
+            <p>Covers data cleaning, exploratory analysis, visualization, and communicating insights for business decision-making using modern analytics tools.</p>
+            <img src="data-analyst-certificate.png" alt="Data Analyst Certificate" class="cert-preview">
+            <a href="data-analyst-certificate.pdf" class="card-link" target="_blank" rel="noopener">
+                View Certificate
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </a>
+            <div class="achievement-date">Issued: 2024</div>
         </div>
 
         <!-- Web Development -->
         <div class="cert-card" id="web-dev">
-            <div class="card-top-row">
-                <div class="card-icon">
-                    <!-- globe/web icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.93 6h-3.46A15.08 15.08 0 0014 4.24 8.03 8.03 0 0118.93 8zM12 4c.83.9 1.54 2.05 2.02 3.5h-4.04C10.46 6.05 11.17 4.9 12 4zM8 4.24A15.08 15.08 0 007.53 8H4.07A8.03 8.03 0 018 4.24zM4.07 10h3.1C7.06 10.64 7 11.31 7 12s.06 1.36.17 2H4.07A7.96 7.96 0 014 12c0-.69.07-1.36.07-2zm.86 6h3.46A15.08 15.08 0 0010 19.76 8.03 8.03 0 014.93 16zM12 20c-.83-.9-1.54-2.05-2.02-3.5h4.04C13.54 17.95 12.83 19.1 12 20zm2-4.24c.39-1.02.67-2.2.78-3.5H19.9c-.21 1.61-.86 3.09-1.9 4.24zM14.78 12c-.11-1.3-.39-2.48-.78-3.5h3.56c.54 1.04.87 2.22.96 3.5h-3.74z"/>
-                    </svg>
-                </div>
-                <span class="cert-badge">
-                    <span class="badge-dot"></span>
-                    Web Development
-                </span>
+            <div class="card-icon">
+                <!-- globe/web icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.93 6h-3.46A15.08 15.08 0 0014 4.24 8.03 8.03 0 0118.93 8zM12 4c.83.9 1.54 2.05 2.02 3.5h-4.04C10.46 6.05 11.17 4.9 12 4zM8 4.24A15.08 15.08 0 007.53 8H4.07A8.03 8.03 0 018 4.24zM4.07 10h3.1C7.06 10.64 7 11.31 7 12s.06 1.36.17 2H4.07A7.96 7.96 0 014 12c0-.69.07-1.36.07-2zm.86 6h3.46A15.08 15.08 0 0010 19.76 8.03 8.03 0 014.93 16zM12 20c-.83-.9-1.54-2.05-2.02-3.5h4.04C13.54 17.95 12.83 19.1 12 20zm2-4.24c.39-1.02.67-2.2.78-3.5H19.9c-.21 1.61-.86 3.09-1.9 4.24zM14.78 12c-.11-1.3-.39-2.48-.78-3.5h3.56c.54 1.04.87 2.22.96 3.5h-3.74z"/>
+                </svg>
             </div>
-
+            <span class="cert-badge">Web Development</span>
             <h3>Web Development Training</h3>
             <div class="issuer">Lifetech Software</div>
-            <p>Covers HTML, CSS, JavaScript, and responsive design for building modern portfolio websites and interactive web applications.</p>
-
-            <div class="cert-preview-wrapper">
-                <img src="webdesign-certificate.png" alt="Web Development Certificate" class="cert-preview">
-                <div class="glass-tag">Front‑End Skills</div>
-            </div>
-
-            <div class="card-links-row">
-                <a href="webdesign-certificate.pdf" class="card-link" target="_blank" rel="noopener">
-                    View Certificate
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                    </svg>
-                </a>
-            </div>
-
-            <div class="achievement-date">
-                <span>Issued: 2022</span>
-                <span class="achievement-pill">HTML · CSS · JS</span>
-            </div>
+            <p>Covers HTML, CSS, JavaScript, and basic responsive design for building portfolio websites and interactive web applications.</p>
+            <img src="webdesign-certificate.png" alt="Web Development Certificate" class="cert-preview">
+            <a href="webdesign-certificate.pdf" class="card-link" target="_blank" rel="noopener">
+                View Certificate
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </a>
+            <div class="achievement-date">Issued: 2022</div>
         </div>
 
         <!-- DCA -->
         <div class="cert-card" id="dca">
-            <div class="card-top-row">
-                <div class="card-icon">
-                    <!-- desktop icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M4 5h16c1.1 0 2 .9 2 2v9c0 1.1-.9 2-2 2h-5v2h2v2H9v-2h2v-2H4c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2zm0 11h16V7H4v9z"/>
-                    </svg>
-                </div>
-                <span class="cert-badge">
-                    <span class="badge-dot"></span>
-                    Computer Fundamentals
-                </span>
+            <div class="card-icon">
+                <!-- desktop icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M4 5h16c1.1 0 2 .9 2 2v9c0 1.1-.9 2-2 2h-5v2h2v2H9v-2h2v-2H4c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2zm0 11h16V7H4v9z"/>
+                </svg>
             </div>
-
-            <h3>Diploma in Computer Application (DCA)</h3>
+            <span class="cert-badge">Diploma in Computer Application (DCA)</span>
+            <h3>Excel, etc..</h3>
             <div class="issuer">E-World / Institute</div>
-            <p>Diploma covering computer fundamentals, MS Office, internet basics, and productivity tools useful for office, academic, and analytics work.</p>
-
-            <div class="cert-preview-wrapper">
-                <img src="dca-certificate.png" alt="DCA Certificate" class="cert-preview">
-                <div class="glass-tag">Diploma</div>
-            </div>
-
-            <div class="card-links-row">
-                <a href="dca-certificate.pdf" class="card-link" target="_blank" rel="noopener">
-                    View Certificate
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                    </svg>
-                </a>
-            </div>
-
-            <div class="achievement-date">
-                <span>Issued: 2020</span>
-                <span class="achievement-pill">Office · Basics</span>
-            </div>
+            <p>Diploma covering computer fundamentals, MS Office, internet basics, and essential productivity tools useful for office and data work.</p>
+            <img src="dca-certificate.png" alt="DCA Certificate" class="cert-preview">
+            <a href="dca-certificate.pdf" class="card-link" target="_blank" rel="noopener">
+                View Certificate
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </a>
+            <div class="achievement-date">Issued: 2020</div>
         </div>
 
     </div>
